@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../dist/output.css" rel="stylesheet" />
+</head>
+<body class="font-sans bg-gray-50 text-gray-900 p-8">
+  
+  <!-- Test de la classe originale -->
+  <div class="mb-8">
+    <h2 class="text-lg font-semibold mb-4">Test classe originale :</h2>
+    <a href="#" class="btn-cta">→ All insights</a>
+  </div>
+
+  <!-- Test des nouvelles classes @apply -->
+  <div class="test-card max-w-md">
+    <h1 class="test-title">Test @apply</h1>
+    <p class="test-text mb-4">
+      Cette carte utilise des classes @apply personnalisées. Si vous voyez ce texte stylé, 
+      cela signifie que @apply fonctionne correctement !
+    </p>
+    <div class="flex items-center gap-4">
+      <button class="test-button">Action</button>
+      <span class="test-badge">Succès</span>
+    </div>
+  </div>
+
+  <!-- Test avec des classes Tailwind directes pour comparaison -->
+  <div class="mt-8 bg-white rounded-lg shadow-md p-6 border border-gray-200 max-w-md">
+    <h1 class="text-2xl font-bold text-gray-900 mb-4">Test classes directes</h1>
+    <p class="text-gray-600 leading-relaxed mb-4">
+      Cette carte utilise les mêmes styles mais avec des classes Tailwind directes.
+    </p>
+    <div class="flex items-center gap-4">
+      <button class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200">
+        Action
+      </button>
+      <span class="inline-block bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+        Succès
+      </span>
+    </div>
+  </div>
+
+</body>
+</html>
