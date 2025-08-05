@@ -32,32 +32,44 @@
 
 /* Hero Section */
 .hero-section {
-  @apply relative min-h-screen flex items-center justify-center text-pure-white;
+  @apply relative py-20;
+}
+
+.hero-container {
+  @apply px-5 tablet:px-0 desktop:px-0 tablet:w-[90%] desktop:max-w-[1316px] mx-auto relative z-10;
 }
 
 .hero-content {
-  @apply text-center max-w-4xl mx-auto px-4;
+  @apply flex flex-col gap-4 tablet:gap-8 desktop:gap-10;
 }
 
 .hero-title {
-  @apply text-h1-mobile md:text-h1-desktop font-light text-pure-white mb-6 leading-tight;
+  @apply text-h1-mobile tablet:text-h1-tablet desktop:text-h1-desktop font-light text-pure-white text-left leading-[50px] md:leading-[140px] tracking-[-0.04em];
+}
+
+.hero-title-line-1 {
+  @apply block;
+}
+
+.hero-title-line-2 {
+  @apply block pl-[30px] tablet:pl-[80px] desktop:pl-[113px];
+}
+
+.hero-subtitle-container {
+  @apply flex flex-col tablet:flex-col tablet:items-start desktop:flex-row desktop:items-end tablet:gap-6 desktop:gap-8 pl-[30px] tablet:pl-[80px] desktop:pl-[113px];
 }
 
 .hero-subtitle {
-  @apply text-subtitle-mobile md:text-subtitle-desktop mb-8 opacity-90 max-w-2xl mx-auto;
+  @apply text-subtitle-mobile tablet:text-subtitle-desktop desktop:text-subtitle-desktop text-pure-white max-w-2xl text-left tablet:flex-none desktop:flex-1 tablet:pl-0 desktop:pl-0 leading-[30px] tracking-[-0.05em];
 }
 
 .hero-cta-group {
-  @apply flex flex-col sm:flex-row gap-4 justify-center items-center;
+  @apply flex flex-col sm:flex-row gap-6 items-start mt-8 tablet:mt-8 desktop:mt-0 tablet:flex-none desktop:flex-shrink-0;
 }
 
 /* CTA Buttons */
-.btn-primary {
-  @apply inline-flex items-center gap-2 px-8 py-3 rounded-full bg-pure-white text-vibrant-blue font-semibold hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl;
-}
-
-.btn-secondary {
-  @apply inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-pure-white text-pure-white font-semibold hover:bg-pure-white hover:text-vibrant-blue transition-all duration-200;
+.btn-cta {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pure-white text-vibrant-blue hover:bg-gray-50 transition-all duration-200 justify-center text-base font-medium leading-[20px];
 }
 
 /* Card Grid - Variantes */

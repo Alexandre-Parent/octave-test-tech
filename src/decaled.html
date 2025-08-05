@@ -13,28 +13,78 @@
   
   <!-- Hero Section -->
   <section class="hero-section">
-    <div class="hero-content">
-      <h1 class="hero-title">Our latest impact</h1>
-      <p class="hero-subtitle">Driving change. Creating a positive impact for all our stakeholders.</p>
-      <div class="hero-cta-group">
-        <a href="#" class="btn-primary">→ All case studies</a>
-        <a href="#" class="btn-secondary">→ All insights</a>
+    <!-- Background SVG -->
+    <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
+             <!-- Desktop SVG -->
+       <svg width="3219" height="952" viewBox="0 0 3219 952" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute object-none w-[3219px] h-[952px] -top-[100px] left-[calc(50%-50px)] -translate-x-1/2 overflow-hidden hidden md:block lg:block">
+        <g opacity="0.3" filter="url(#filter0_f_2028_4)">
+          <path d="M1018.55 384.356C1200.86 325.33 1383.82 300.878 1533.73 315.504C1668.45 328.649 1772.3 373.486 1838.69 406.066C1869.31 421.095 1899.14 437.104 1927.97 452.584C1979.22 480.093 2032.21 508.539 2091.58 532.484C2117.07 542.767 2140.47 550.801 2163.11 557.049C2190.75 564.677 2217.55 569.789 2245.07 572.675C2275.26 575.843 2307.43 576.044 2338.12 573.257C2344.67 572.664 2351.11 571.942 2357.45 571.094L2357.45 571.099C2383.58 567.604 2407.88 561.969 2429.89 554.286C2460.56 543.576 2487.26 528.749 2509.24 510.214C2528.37 494.093 2543.75 475.086 2553.73 455.246C2566.23 430.419 2571.16 405.217 2575.92 380.843C2578.31 368.61 2580.79 355.957 2584.19 343.51C2604.27 269.99 2658.87 195.735 2742.09 128.775C2811.71 72.7606 2888.42 35.3728 2970.11 17.6503C3061.53 -2.17891 3179.33 7.24389 3209.01 52.8825L3211.36 52.2782C3197.65 31.195 3163.61 16.0734 3115.5 9.70296C3070.25 3.71231 3017.06 6.18579 2969.56 16.4908C2887.27 34.344 2810.06 71.9425 2740.09 128.246C2656.64 195.391 2601.89 269.852 2581.75 343.577C2578.34 356.051 2575.87 368.714 2573.47 380.962C2568.72 405.285 2563.8 430.436 2551.36 455.16C2538.74 480.228 2506.04 526.309 2428.8 553.274C2376.54 571.52 2309.9 578.137 2245.99 571.431C2195.97 566.183 2148.88 553.846 2093.31 531.43C2034.04 507.527 1981.1 479.104 1929.89 451.619C1901.04 436.13 1871.21 420.114 1840.55 405.071C1791.91 381.199 1746.4 362.683 1701.42 348.464C1675.15 340.158 1648.4 333.138 1621.93 327.596C1593.31 321.604 1563.93 317.115 1534.62 314.256C1456.05 306.59 1368.66 309.553 1274.86 323.059C1231.85 329.254 1187.64 337.685 1143.48 348.118C1101.25 358.093 1058.88 369.937 1017.55 383.319C854.446 436.13 141.197 876.197 5.17767 945.364" stroke="url(#paint0_linear_2028_4)" stroke-width="4"/>
+        </g>
+        <defs>
+          <filter id="filter0_f_2028_4" x="0.270996" y="0.494141" width="3218.28" height="950.653" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_2028_4"/>
+          </filter>
+          <linearGradient id="paint0_linear_2028_4" x1="-1040.24" y1="231.228" x2="1407.43" y2="2804.98" gradientUnits="userSpaceOnUse">
+            <stop offset="0.41" stop-color="#04F06A"/>
+            <stop offset="0.68" stop-color="white"/>
+            <stop offset="1" stop-color="white"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      
+      <!-- Mobile SVG -->
+      <svg width="375" height="173" viewBox="0 0 375 173" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute object-none w-[375px] h-[173px] -top-[50px] left-[calc(50%-25px)] -translate-x-1/2 overflow-hidden block md:hidden lg:hidden" style="margin-top: 75px; width: 150%;">
+        <g opacity="0.3" filter="url(#filter0_f_1_1551)">
+          <path d="M360.051 166.298C358.235 166.541 356.389 166.747 354.514 166.918C345.719 167.717 336.5 167.659 327.852 166.751C319.966 165.923 312.285 164.458 304.365 162.271C297.878 160.48 291.173 158.177 283.869 155.23C266.859 148.365 251.675 140.211 236.99 132.325C228.727 127.888 220.182 123.299 211.407 118.99C192.382 109.651 162.626 96.7976 124.025 93.0295C81.0677 88.8369 28.6427 95.8462 -23.5944 112.767C-70.2483 127.879 -110.512 148.363 -149.452 168.173L-149.895 167.939C-110.92 148.111 -70.6177 127.609 -23.8813 112.47C-12.0387 108.633 0.100493 105.238 12.2014 102.379C24.8567 99.3879 37.5231 96.9713 49.8489 95.1952C76.724 91.3236 101.765 90.4744 124.278 92.6719C132.678 93.4914 141.095 94.7782 149.296 96.4959C156.882 98.0844 164.546 100.097 172.074 102.478C184.961 106.554 198.002 111.862 211.941 118.705C220.726 123.017 229.274 127.609 237.541 132.049C252.212 139.928 267.383 148.075 284.365 154.927C300.289 161.353 313.783 164.89 328.115 166.394C346.429 168.316 365.521 166.42 380.497 161.189C402.628 153.46 411.998 140.25 415.614 133.064C419.18 125.976 420.588 118.767 421.951 111.794C422.636 108.283 423.347 104.653 424.323 101.077C430.094 79.9429 445.781 58.5979 469.693 39.3499C489.743 23.2098 511.865 12.4317 535.445 7.31387C549.057 4.35981 564.298 3.65075 577.262 5.36804C591.047 7.1942 600.802 11.529 604.73 17.5728L604.056 17.746C595.554 4.66312 561.797 1.96196 535.604 7.64623C512.197 12.7266 490.214 23.4443 470.266 39.5015C446.42 58.6964 430.776 79.9825 425.021 101.058C424.047 104.626 423.338 108.253 422.653 111.76C421.289 118.747 419.877 125.971 416.295 133.088C413.434 138.776 409.026 144.224 403.547 148.846C397.247 154.159 389.597 158.409 380.808 161.479C374.501 163.682 367.539 165.297 360.051 166.299L360.051 166.298Z" stroke="url(#paint0_linear_1_1551)" stroke-width="2"/>
+        </g>
+        <defs>
+          <filter id="filter0_f_1_1551" x="-155.068" y="0.448242" width="764.395" height="171.851" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="1.5" result="effect1_foregroundBlur_1_1551"/>
+          </filter>
+          <linearGradient id="paint0_linear_1_1551" x1="-613.52" y1="68.871" x2="88.1499" y2="806.368" gradientUnits="userSpaceOnUse">
+            <stop offset="0.41" stop-color="#04F06A"/>
+            <stop offset="0.68" stop-color="white"/>
+            <stop offset="1" stop-color="white"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    
+    <!-- Hero Content -->
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="hero-title-line-1">Our latest</span>
+          <span class="hero-title-line-2">impact</span>
+        </h1>
+        <div class="hero-subtitle-container">
+          <p class="hero-subtitle">Driving change. <br class="md:hidden"> Creating a positive impact for all our stakeholders.</p>
+          <div class="hero-cta-group">
+            <a href="#" class="btn-cta">
+              <img src="assets/pictos/arrow.png" alt="arrow" class="w-4 h-4">
+              All case studies
+            </a>
+            <a href="#" class="btn-cta">
+              <img src="assets/pictos/arrow.png" alt="arrow" class="w-4 h-4">
+              All insights
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Cards Section - Variante Décalée -->
   <section class="py-16 px-4">
-    <div class="max-w-7xl mx-auto">
+    <div class="px-5 md:w-[90%] max-w-[1316px] mx-auto grid grid-cols-12 gap-[73px]">
       
-      <!-- Navigation entre variantes -->
-      <div class="mb-8 flex gap-4 justify-center">
-        <a href="index.html" class="px-4 py-2 bg-gray-200 text-black rounded-md hover:bg-gray-300">Bloc Linéaire</a>
-        <a href="decaled.html" class="px-4 py-2 bg-vibrant-blue text-pure-white rounded-md">Bloc Décalé</a>
-      </div>
-      
+
       <!-- Test Grid 1 Column - Décalé -->
-      <div class="mb-16">
+      <div class="col-span-12 mb-16">
         <h2 class="text-2xl font-bold text-pure-white mb-8">Test 1 Colonne - Décalé</h2>
         <div class="cards-grid-decaled cards-grid-decaled-1col">
           <div class="card card-insights card-decaled-even">
@@ -52,7 +102,7 @@
       </div>
 
       <!-- Test Grid 2 Columns - Décalé -->
-      <div class="mb-16">
+      <div class="col-span-12 mb-16">
         <h2 class="text-2xl font-bold text-pure-white mb-8">Test 2 Colonnes - Décalé</h2>
         <div class="cards-grid-decaled cards-grid-decaled-2col">
           <div class="card card-insights card-decaled-even">
@@ -82,7 +132,7 @@
       </div>
 
       <!-- Test Grid 3 Columns - Décalé -->
-      <div class="mb-16">
+      <div class="col-span-12 mb-16">
         <h2 class="text-2xl font-bold text-pure-white mb-8">Test 3 Colonnes - Décalé</h2>
         <div class="cards-grid-decaled cards-grid-decaled-3col">
           <div class="card card-insights card-decaled-even">
@@ -125,6 +175,14 @@
 
     </div>
   </section>
+
+  <!-- Navigation Fixe -->
+  <div class="fixed bottom-4 right-4 z-50">
+    <div class="flex gap-2">
+      <a href="index.html" class="px-4 py-2 bg-gray-200 text-black rounded-md text-sm font-medium shadow-lg hover:bg-gray-300 transition-colors">Linéaire</a>
+      <a href="decaled.html" class="px-4 py-2 bg-vibrant-blue text-pure-white rounded-md text-sm font-medium shadow-lg hover:bg-dark-purple transition-colors">Décalé</a>
+    </div>
+  </div>
 
 </body>
 </html> 
