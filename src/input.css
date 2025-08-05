@@ -4,16 +4,16 @@
 
 /* Exemple classe custom */
 .btn-cta {
-  @apply inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white text-[#451DC7] text-sm font-medium hover:bg-gray-100 transition;
+  @apply inline-flex items-center gap-2 px-6 py-2 rounded-full bg-pure-white text-vibrant-blue text-sm font-medium hover:bg-gray-100 transition;
 }
 
 /* Classes de test pour vérifier @apply */
 .test-card {
-  @apply bg-white rounded-lg shadow-md p-6 border border-gray-200;
+  @apply bg-pure-white rounded-lg shadow-md p-6 border border-gray-200;
 }
 
 .test-title {
-  @apply text-2xl font-bold text-gray-900 mb-4;
+  @apply text-2xl font-bold text-black mb-4;
 }
 
 .test-text {
@@ -21,9 +21,162 @@
 }
 
 .test-button {
-  @apply bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200;
+  @apply bg-vibrant-blue hover:bg-dark-purple text-pure-white font-medium py-2 px-4 rounded-md transition-colors duration-200;
 }
 
 .test-badge {
-  @apply inline-block bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full;
+  @apply inline-block bg-energy-green text-black text-xs font-medium px-2.5 py-0.5 rounded-full;
+}
+
+/* ===== COMPOSANTS PROJET ===== */
+
+/* Hero Section */
+.hero-section {
+  @apply relative min-h-screen flex items-center justify-center text-pure-white;
+}
+
+.hero-content {
+  @apply text-center max-w-4xl mx-auto px-4;
+}
+
+.hero-title {
+  @apply text-h1-mobile md:text-h1-desktop font-light text-pure-white mb-6 leading-tight;
+}
+
+.hero-subtitle {
+  @apply text-subtitle-mobile md:text-subtitle-desktop mb-8 opacity-90 max-w-2xl mx-auto;
+}
+
+.hero-cta-group {
+  @apply flex flex-col sm:flex-row gap-4 justify-center items-center;
+}
+
+/* CTA Buttons */
+.btn-primary {
+  @apply inline-flex items-center gap-2 px-8 py-3 rounded-full bg-pure-white text-vibrant-blue font-semibold hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-pure-white text-pure-white font-semibold hover:bg-pure-white hover:text-vibrant-blue transition-all duration-200;
+}
+
+/* Card Grid - Variantes */
+.cards-grid {
+  @apply grid gap-6 md:gap-8 lg:gap-10;
+}
+
+.cards-grid-1col {
+  @apply grid-cols-1;
+}
+
+.cards-grid-2col {
+  @apply grid-cols-1 md:grid-cols-2;
+}
+
+.cards-grid-3col {
+  @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+}
+
+/* Variante Linéaire (Non-alterné) */
+.cards-grid-linear {
+  @apply grid gap-6 md:gap-8 lg:gap-10;
+}
+
+.cards-grid-linear-1col {
+  @apply grid-cols-1;
+}
+
+.cards-grid-linear-2col {
+  @apply grid-cols-1 md:grid-cols-2;
+}
+
+.cards-grid-linear-3col {
+  @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+}
+
+/* Variante Décalée (Alterné) */
+.cards-grid-decaled {
+  @apply grid gap-6 md:gap-8 lg:gap-10;
+}
+
+.cards-grid-decaled-1col {
+  @apply grid-cols-1;
+}
+
+.cards-grid-decaled-2col {
+  @apply grid-cols-1 md:grid-cols-2;
+}
+
+.cards-grid-decaled-3col {
+  @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+}
+
+/* Classes pour le décalage alterné */
+.card-decaled-even {
+  @apply transform translate-y-0;
+}
+
+.card-decaled-odd {
+  @apply transform translate-y-8 md:translate-y-12 lg:translate-y-16;
+}
+
+/* Card Components */
+.card {
+  @apply relative bg-pure-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl;
+}
+
+.card-insights {
+  @apply bg-radial-cards text-pure-white;
+}
+
+.card-case-studies {
+  @apply bg-pure-white text-black;
+}
+
+.card-image {
+  @apply relative w-full h-48 md:h-56 lg:h-64 overflow-hidden;
+}
+
+.card-image img {
+  @apply w-full h-full object-cover transition-transform duration-300 hover:scale-105;
+}
+
+.card-badge {
+  @apply absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold z-10;
+}
+
+.card-badge-insights {
+  @apply bg-pure-white text-vibrant-blue;
+}
+
+.card-badge-case-studies {
+  @apply bg-vibrant-blue text-pure-white;
+}
+
+.card-content {
+  @apply p-6;
+}
+
+.card-category {
+  @apply text-tag opacity-75 mb-2;
+}
+
+.card-title {
+  @apply text-xl font-bold mb-3 leading-tight;
+}
+
+.card-description {
+  @apply text-sm leading-relaxed mb-4;
+}
+
+.card-link {
+  @apply inline-flex items-center gap-1 text-sm font-medium underline hover:no-underline transition-all duration-200;
+}
+
+.card-link-insights {
+  @apply text-energy-green hover:text-green-300;
+}
+
+.card-link-case-studies {
+  @apply text-vibrant-blue hover:text-dark-purple;
 }
