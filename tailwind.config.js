@@ -2,50 +2,34 @@
 module.exports = {
   content: [
     "./src/**/*.{html,js,jsx,ts,tsx}",
-    "./*.html"
+    "*.html"
   ],
   theme: {
     extend: {
+      screens: {
+        'tablet': '768px',
+        'desktop': '1024px',
+      },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
       },
       fontSize: {
-        'h1-desktop': ['140px', {
-          lineHeight: '140px',
-          letterSpacing: '-0.04em',
-          fontWeight: '300',
-        }],
-        'h1-mobile': ['44px', {
-          lineHeight: '50px',
-          letterSpacing: '-0.05em',
-          fontWeight: '300',
-        }],
-        'subtitle-desktop': ['26px', {
-          lineHeight: '30px',
-          letterSpacing: '-0.05em',
-          fontWeight: '400',
-        }],
-        'subtitle-mobile': ['22px', {
-          lineHeight: '30px',
-          letterSpacing: '-0.05em',
-          fontWeight: '400',
-        }],
-        'tag': ['16px', {
-          lineHeight: '20px',
-          letterSpacing: '0.05em',
-          fontWeight: '500',
-          textTransform: 'uppercase',
-        }],
+        'h1-desktop': ['140px'],
+        'h1-tablet': ['120px'],
+        'h1-mobile': ['44px'],
+        'subtitle-desktop': ['26px', { lineHeight: '1.15' }],
+        'subtitle-mobile': ['22px', { lineHeight: '1.15' }],
+        'tag': ['16px', { lineHeight: '1.25' }],
       },
       colors: {
         'pure-white': '#FFFFFF',
         'vibrant-blue': '#451DC7',
-        'black': '#111111',
-        'energy-green': '#04F06A',
-        'dark-purple': '#250F6B',
+        'black': '#000000',
+        'energy-green': '#17B285',
+        'dark-purple': '#4325C4',
       },
       backgroundImage: {
-        'radial-cards': 'radial-gradient(104.71% 432.93% at 29.43% 37.21%, #451DC7 0%, #250F6B 100%)',
+        'radial-cards': 'radial-gradient(ellipse at center, rgba(67, 37, 196, 0.1) 0%, rgba(23, 178, 133, 0.1) 100%)',
         'radial-page': 'linear-gradient(68deg,rgba(67, 37, 196, 1) 0%, rgba(23, 178, 133, 1) 100%)',
       },
       spacing: {
