@@ -7,9 +7,8 @@
   @apply inline-flex items-center gap-2 px-6 py-2 rounded-full bg-pure-white text-vibrant-blue text-sm font-medium hover:bg-gray-100 transition;
 }
 
-
 .hero-section {
-  @apply relative py-20;
+  @apply relative pt-[115px] pb-[85px];
 }
 
 .hero-container {
@@ -102,13 +101,30 @@
   @apply transform translate-y-8 md:translate-y-10 lg:translate-y-10 mb-10;
 }
 
+/* Container pour aligner les cartes avec hauteur uniforme */
+.cards-container {
+  @apply flex flex-wrap gap-10 items-stretch;
+}
+
+
+
+/* Compensation pour le décalage */
+.card-decaled {
+  @apply transform translate-y-8 md:translate-y-10 lg:translate-y-10 mb-10;
+}
+
+/* Décalage visuel uniquement */
+.card-decaled {
+  @apply transform translate-y-8 md:translate-y-10 lg:translate-y-10 mb-10;
+}
+
 .card {
-  @apply relative bg-pure-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl max-w-[412px] max-h-[540px];
+  @apply relative bg-pure-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl max-w-[412px] flex flex-col min-h-[540px] md:min-h-[540px];
 }
 
 
 .card-image {
-  @apply relative w-full h-[314px] overflow-hidden;
+  @apply relative w-full h-[314px] overflow-hidden flex-shrink-0;
 }
 
 .card-image img {
@@ -120,7 +136,7 @@
 }
 
 .card-badge-white {
-  @apply bg-pure-white text-vibrant-blue;
+  @apply bg-pure-white text-black;
 }
 
 .card-badge-radial {
@@ -128,12 +144,12 @@
 }
 
 .card-content {
-  @apply px-6 pt-6 pb-[29px] h-[226px] flex flex-col;
+  @apply px-6 pt-6 pb-6 flex flex-col flex-grow;
 }
 
 
 .card-title {
-  @apply text-[22px] md:text-[26px] font-normal mb-3 leading-[30px] tracking-[-0.05em];
+  @apply text-[22px] md:text-[26px] font-normal mb-10 leading-[30px] tracking-[-0.05em] flex-shrink-0;
 }
 
 .card-description {
@@ -141,7 +157,7 @@
 }
 
 .card-link {
-  @apply inline-flex items-center gap-1 text-sm font-medium underline hover:no-underline transition-all duration-200;
+  @apply inline-flex items-center gap-1 text-tag font-medium underline;
 }
 
 
@@ -206,13 +222,24 @@
   @apply underline decoration-energy-green decoration-[3px] underline-offset-[8px] mt-auto;
 }
 
+.card-double .card-link-underline {
+  @apply mt-0;
+}
+.card-large .card-link-underline {
+  @apply mt-0;
+}
+
+.card-link-full {
+  @apply absolute inset-0 z-20;
+}
+
 /* Carte de taille double (2 cartes classiques) */
 .card-double {
   @apply relative bg-pure-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl flex flex-col md:flex-row h-[540px] w-[864px];
 }
 
 .card-double-image {
-  @apply md:w-[412px] relative;
+  @apply w-full md:w-[412px] relative flex-shrink-0;
 }
 
 .card-double-bg {
@@ -220,9 +247,9 @@
 }
 
 .card-double-content {
-  @apply px-[40px] py-[162px] md:flex-1 md:flex md:flex-col md:justify-center;
+  @apply px-[40px] py-[162px] md:flex md:flex-col md:justify-center md:flex-1;
 }
 
 .card-double-title {
-  @apply text-[22px] md:text-[26px] font-normal mb-3 leading-[30px] tracking-[-0.05em];
+  @apply text-[22px] md:text-[26px] font-normal mb-8 leading-[30px] tracking-[-0.05em];
 }
