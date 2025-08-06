@@ -212,7 +212,7 @@
 
 /* Carte de taille double (2 cartes classiques) */
 .card-double {
-  @apply relative bg-pure-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl flex flex-col md:flex-row h-[540px];
+  @apply relative bg-pure-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl flex flex-col md:flex-row h-[540px] w-[864px];
 }
 
 .card-double-image {
