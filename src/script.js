@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const MIN_HEIGHT = 540;
     const DECALAGE_HEIGHT = 580;
     const REDUCTION_AMOUNT = 40;
+    const DESKTOP_BREAKPOINT = 1316;
 
     function resetCardStyles() {
       const allCards = document.querySelectorAll('.card, .card-double');
@@ -73,6 +74,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function alignCardHeights() {
+      // Ne s'exécute que sur les écrans plus larges que desktop
+      if (window.innerWidth <= DESKTOP_BREAKPOINT) return;
+
       const container = document.querySelector('.cards-container');
       if (!container) return;
 

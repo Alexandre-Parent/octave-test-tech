@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       screens: {
         'tablet': '768px',
-        'desktop': '1024px',
+        'laptop': '1024px',
+        'desktop': '1316px',
       },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
