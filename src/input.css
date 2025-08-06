@@ -98,16 +98,12 @@
 }
 
 /* Classes pour le décalage alterné */
-.card-decaled-even {
-  @apply transform translate-y-0;
-}
-
-.card-decaled-odd {
-  @apply transform translate-y-8 md:translate-y-12 lg:translate-y-16;
+.card-decaled {
+  @apply transform translate-y-8 md:translate-y-10 lg:translate-y-10 mb-10;
 }
 
 .card {
-  @apply relative bg-pure-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl max-w-[412px];
+  @apply relative bg-pure-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl max-w-[412px] max-h-[540px];
 }
 
 
