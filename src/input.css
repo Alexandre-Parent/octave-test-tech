@@ -7,30 +7,7 @@
   @apply inline-flex items-center gap-2 px-6 py-2 rounded-full bg-pure-white text-vibrant-blue text-sm font-medium hover:bg-gray-100 transition;
 }
 
-/* Classes de test pour vérifier @apply */
-.test-card {
-  @apply bg-pure-white rounded-lg shadow-md p-6 border border-gray-200;
-}
 
-.test-title {
-  @apply text-2xl font-bold text-black mb-4;
-}
-
-.test-text {
-  @apply text-gray-600 leading-relaxed;
-}
-
-.test-button {
-  @apply bg-vibrant-blue hover:bg-dark-purple text-pure-white font-medium py-2 px-4 rounded-md transition-colors duration-200;
-}
-
-.test-badge {
-  @apply inline-block bg-energy-green text-black text-xs font-medium px-2.5 py-0.5 rounded-full;
-}
-
-/* ===== COMPOSANTS PROJET ===== */
-
-/* Hero Section */
 .hero-section {
   @apply relative py-20;
 }
@@ -67,12 +44,10 @@
   @apply flex flex-col sm:flex-row gap-6 items-start mt-8 tablet:mt-8 desktop:mt-0 tablet:flex-none desktop:flex-shrink-0;
 }
 
-/* CTA Buttons */
 .btn-cta {
   @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pure-white text-vibrant-blue hover:bg-gray-50 transition-all duration-200 justify-center text-base font-medium leading-[20px];
 }
 
-/* Card Grid - Variantes */
 .cards-grid {
   @apply grid gap-6 md:gap-8 lg:gap-10;
 }
@@ -89,7 +64,6 @@
   @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
 }
 
-/* Variante Linéaire (Non-alterné) */
 .cards-grid-linear {
   @apply grid gap-6 md:gap-8 lg:gap-10;
 }
@@ -132,49 +106,38 @@
   @apply transform translate-y-8 md:translate-y-12 lg:translate-y-16;
 }
 
-/* Card Components */
 .card {
-  @apply relative bg-pure-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl;
+  @apply relative bg-pure-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl max-w-[412px];
 }
 
-.card-insights {
-  @apply bg-radial-cards text-pure-white;
-}
-
-.card-case-studies {
-  @apply bg-pure-white text-black;
-}
 
 .card-image {
-  @apply relative w-full h-48 md:h-56 lg:h-64 overflow-hidden;
+  @apply relative w-full h-[314px] overflow-hidden;
 }
 
 .card-image img {
-  @apply w-full h-full object-cover transition-transform duration-300 hover:scale-105;
+  @apply w-full h-full object-cover;
 }
 
 .card-badge {
-  @apply absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold z-10;
+  @apply absolute top-6 left-6 px-3 py-1 rounded-full text-xs font-semibold z-10;
 }
 
-.card-badge-insights {
+.card-badge-white {
   @apply bg-pure-white text-vibrant-blue;
 }
 
-.card-badge-case-studies {
+.card-badge-radial {
   @apply bg-vibrant-blue text-pure-white;
 }
 
 .card-content {
-  @apply p-6;
+  @apply px-6 pt-6 pb-[29px] h-[226px] flex flex-col;
 }
 
-.card-category {
-  @apply text-tag opacity-75 mb-2;
-}
 
 .card-title {
-  @apply text-xl font-bold mb-3 leading-tight;
+  @apply text-[22px] md:text-[26px] font-normal mb-3 leading-[30px] tracking-[-0.05em];
 }
 
 .card-description {
@@ -185,10 +148,85 @@
   @apply inline-flex items-center gap-1 text-sm font-medium underline hover:no-underline transition-all duration-200;
 }
 
-.card-link-insights {
-  @apply text-energy-green hover:text-green-300;
+
+
+.card-bg-radial {
+  @apply bg-radial-cards text-pure-white;
 }
 
-.card-link-case-studies {
-  @apply text-vibrant-blue hover:text-dark-purple;
+.card-bg-white {
+  @apply bg-pure-white text-black;
+}
+
+.card-large {
+  @apply relative bg-pure-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl bg-radial-cards text-pure-white flex flex-col md:flex-row h-[540px];
+}
+
+.card-large-image {
+  @apply md:w-1/2 relative;
+}
+
+.card-large-bg {
+  @apply absolute inset-0 bg-cover bg-center bg-no-repeat;
+}
+
+.card-large-content {
+  @apply px-16 py-[102px] md:w-1/2 md:flex md:flex-col md:justify-center;
+}
+
+.card-category {
+  @apply text-tag font-medium leading-[20px] tracking-[0.05em] uppercase mb-2;
+}
+
+.card-category-green {
+  @apply text-energy-green;
+}
+
+.card-category-blue {
+  @apply text-vibrant-blue;
+}
+
+.card-category-radial {
+  @apply text-energy-green;
+}
+
+.card-category-white {
+  @apply text-vibrant-blue;
+}
+
+.card-large-title {
+  @apply text-h2-large font-normal mb-10 tracking-[-0.05em];
+}
+
+.card-link-white {
+  @apply text-pure-white;
+}
+
+.card-link-black {
+  @apply text-black;
+}
+
+.card-link-underline {
+  @apply underline decoration-energy-green decoration-[3px] underline-offset-[8px] mt-auto;
+}
+
+/* Carte de taille double (2 cartes classiques) */
+.card-double {
+  @apply relative bg-pure-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl flex flex-col md:flex-row h-[540px];
+}
+
+.card-double-image {
+  @apply md:w-[412px] relative;
+}
+
+.card-double-bg {
+  @apply absolute inset-0 bg-cover bg-center bg-no-repeat;
+}
+
+.card-double-content {
+  @apply px-[40px] py-[162px] md:flex-1 md:flex md:flex-col md:justify-center;
+}
+
+.card-double-title {
+  @apply text-[22px] md:text-[26px] font-normal mb-3 leading-[30px] tracking-[-0.05em];
 }
