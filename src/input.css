@@ -105,8 +105,6 @@
   @apply flex flex-col md:flex-row md:flex-wrap gap-5 md:gap-10 items-stretch justify-center w-full px-5 md:px-10 laptop:px-10 desktop:px-0 md:justify-between;
 }
 
-
-
 @media (min-width: 768px) and (max-width: 1315px) {
   .cards-container {
     justify-content: space-between;
@@ -121,13 +119,9 @@
   }
 }
 
-
-
-
 .card {
   @apply relative bg-pure-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl w-full md:w-[calc(50%-20px)] desktop:w-auto desktop:max-w-[412px] flex flex-col;
 }
-
 
 .card-image {
   @apply relative w-full h-[250px] md:h-[314px] overflow-hidden flex-shrink-0;
@@ -153,7 +147,6 @@
   @apply px-6 pt-6 pb-6 flex flex-col flex-grow;
 }
 
-
 .card-title {
   @apply text-[22px] md:text-[26px] font-normal mb-10 leading-[30px] tracking-[-0.05em] flex-shrink-0;
 }
@@ -166,8 +159,6 @@
   @apply inline-flex items-center gap-1 text-tag font-medium underline;
 }
 
-
-
 .card-bg-radial {
   @apply bg-radial-cards text-pure-white;
 }
@@ -179,7 +170,6 @@
 .card-large {
   @apply relative bg-pure-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 bg-radial-cards text-pure-white flex flex-col w-full md:w-[calc(50%-20px)] laptop:w-[calc(50%-20px)] desktop:flex-row desktop:h-[540px] desktop:w-full;
 }
-
 
 .card-large-image {
   @apply w-full relative h-[314px] md:h-[314px] laptop:h-[314px] desktop:w-1/2 desktop:h-auto;
@@ -272,4 +262,46 @@
 
 .card-double-title {
   @apply text-[22px] font-normal mb-10 leading-[30px] tracking-[-0.05em] md:text-[26px] laptop:text-[26px] desktop:text-[26px];
+}
+
+/* Animations des étincelles améliorées */
+@keyframes sparkle {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes sparkle-pulse {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes sparkle-rotate {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.sparkle,
+.sparkle-line,
+.sparkle-star {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  pointer-events: none;
 }
