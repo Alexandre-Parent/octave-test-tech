@@ -1,9 +1,5 @@
 # TEST TECHNIQUE OCTAVE
 
-
-
-## ⏱️ Suivi des Temps - Test Technique
-
 ### 📋 Temps par Tâche
 
 | Tâche | Estimé | Réel |
@@ -16,16 +12,9 @@
 | 6. Animation SVG | 1h 00 | **2h30** | 
 | 7. Théorie ACF + Gutenberg | 30min | **2h00** | (Avec le travail en plus)
 | 8. Bonus JS (this) | 30 min | **30min** |
-| 9. Finitions + tests | 1h 00 | **___h30** |
+| 9. Finitions + tests | 1h 00 | **45min** |
 | 10. README + compte-rendu | 1h 00 | **1h30** |
 
-### 📊 **Bilan Global**
-```
-🎯 Temps total estimé    : 11h 00
-⏰ Temps total réel      : ___ h ___
-📈 Écart total           : ___
-📊 Taux de respect       : ___%
-```
 
 ### 💬 **Analyse Détaillée des Écarts**
 
@@ -35,7 +24,7 @@
 _J'ai perdu du temps à cause du gradient de fond qui était très différent en copié collé depuis figma car les points de repères sont très loin sur la page et j'ai essayé de refaire au mieux possible à la main._
 _Aussi le SVG passant derrière était trop petit pour les écran 1920+ n'ayant pas de contact avec le/la graphiste j'ai allongé un peu sur la gauche mais pas suffisant pour les écrans ultrawide(3440px), j'ai pas voulu perdre trop de temps dessus_
 
-![Problème de gradient Figma](./pbGradient.png)
+![Problème de gradient Figma](./src/assets/cr/pbGradient.png)
 
 _Les repères du gradiant sont trop en dehors de la page pour réussir à appliquer le même avec un copié collé_
 
@@ -55,9 +44,13 @@ _Temps plus long car j'ai rédiger les fichier php et twig comme demandé_
 
 **8. Bonus JS (this) (+-0)**
 
-**9. Finitions + tests**
+**9. Finitions + tests** (+15min d'avance) :
 
 **10. README + compte-rendu (+30min)**
+
+Au final j'aurais respecté l'estimation de base en ne prenant pas en compte la charge de travail supplémentaire ajoutée après.
+J'aurais même pu être en avance si je n'avais pas voulu essayer d'améliorer l'animation pour pas grand-chose.
+
 
 ### 🎯 **Alternatives Explorées**
 
@@ -83,6 +76,8 @@ Pour que au final, je me rappel de "La courbe doit se dessiner progressivement a
 
 3. Ensuite dans `function.php` on va ajouter 
 
+
+```php
 function register_our_latest_impact_block() {
     if (function_exists('acf_register_block_type')) {
         acf_register_block_type([
@@ -101,6 +96,7 @@ function register_our_latest_impact_block() {
         ]);
     }
 }
+```
 
 4. On a ensuite créé nos pages de rendu :
    - `single-classique.php` : Version PHP pure 
@@ -108,6 +104,7 @@ function register_our_latest_impact_block() {
 
 5. On ajoute l'enregistrement du bloc dans `function.php`
 
+```php
 add_action('acf/init', 'register_our_latest_impact_block');
 
 function register_our_latest_impact_block() {
@@ -115,19 +112,21 @@ function register_our_latest_impact_block() {
         acf_register_block_type([
             'name' => 'our-latest-impact',
             'title' => __('Our Latest Impact'),
-            'render_callback' => 'render_our_latest_impact_block', // ← Votre fonction
+            'render_callback' => 'render_our_latest_impact_block',
             'category' => 'custom-blocks',
             'icon' => 'grid-view'
         ]);
     }
 }
-
+```
 _Version PHP pure_
+```php
 require_once get_template_directory() . '/assets/cr/single-classique.php';
-
-_Version Timber + Twig_  
+```
+_Version Timber + Twig_ 
+```php
 require_once get_template_directory() . '/assets/cr/block-our-latest-impact.php';
-
+```
 
 ### **Avantages d’utiliser ACF Blocks**
 
@@ -145,17 +144,17 @@ En résumé, ACF Blocks offre une solution rapide, flexible et propre pour dynam
 
 -**Timber + Twig**
 
-Avantages : Séparation logique/présentation, templates plus lisibles, système de cache Twig
+Avantages : Séparation logique/présentation, templates plus lisibles, système de cache Twig  
 Inconvénients : Dépendance externe,
 
 -**Gutenberg Blocks Natifs (React/VueJS)**
 
-Avantages : Performance maximale
+Avantages : Performance maximale  
 Inconvénients : Courbe d'apprentissage React, développement plus long, complexité pour les champs dynamiques
 
 -**Page Builders (Elementor Pro/Divi/Oxygen Oxygen/...)**
 
-Avantages : Interface drag & drop, widgets prêts à l'emploi
+Avantages : Interface drag & drop, widgets prêts à l'emploi  
 Inconvénients : Vendor lock-in, performance dégradée, code généré souvent lourd, payant avec abonnement
 
 
@@ -166,6 +165,7 @@ Il pointe dynamiquement vers un objet qu'il possède ou appelle une fonction au 
 
 -**Dans un objet**
 
+```javascript
 const personne = {
     nom: "Alexandre",
     saluer() {
@@ -175,19 +175,23 @@ const personne = {
 };
 
 personne.saluer(); // "Bonjour, je suis Alexandre"
+```
 
 -**Fonction autonome**
 
+```javascript
 function direBonjour() {
     console.log(this);
 }
 
 direBonjour();
+```
 
 _Cela va nous renvoyer toutes les propriétés globales : document, location, navigator, etc._
 
 -**Perte du contexte**
 
+```javascript
 const personne = {
     nom: "Alexandre",
     saluer() {
@@ -198,11 +202,13 @@ const personne = {
 const salutation = personne.saluer;
 salutation(); 
 // "Bonjour, je suis undefined"
+```
 
 _`this` ne fait plus référence à `personne` !_
 
 -**Dans une fonction fléchée c'est encore différent**
 
+```javascript
 const personne = {
     nom: "Alexandre",
     saluer() {
@@ -219,14 +225,17 @@ const personne = {
 };
 
 personne.saluer();
+```
 
 _Les arrow functions "capturent" le `this` de leur contexte de définition et ne le changent jamais, tandis que les fonctions normales ont un `this` qui dépend de comment elles sont appelées._
 
 -**Dans une classe**
 
+
+```javascript
 class Animal {
     constructor(nom) {
-        this.nom = nom;  _`this` fait référence à l'instance créée_
+        this.nom = nom;  // `this` fait référence à l'instance créée
     }
     
     parler() {
@@ -238,11 +247,14 @@ const chien = new Animal("Francis");
 chien.parler();
 
 // "Francis fait du bruit"
+```
 
 _Donc chaque instance possède son propre `this`_
 
+```javascript
 const chien = new Animal("Francis");
 const chat = new Animal("Minou");
 
 chien.parler(); // "Francis fait du bruit" -> this = chien
 chat.parler(); // "Minou fait du bruit" -> this = chat
+```
