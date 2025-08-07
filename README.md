@@ -31,7 +31,7 @@
 _J'ai perdu du temps à cause du gradient de fond qui était très différent en copié collé depuis figma car les points de repères sont très loin sur la page et j'ai essayé de refaire au mieux possible à la main._
 _Aussi le SVG passant derrière était trop petit pour les écran 1920+ n'ayant pas de contact avec le/la graphiste j'ai allongé un peu sur la gauche mais pas suffisant pour les écrans ultrawide(3440px), j'ai pas voulu perdre trop de temps dessus_
 
-![Problème de gradient Figma](./pbGradient.png)
+![Problème de gradient Figma](./src/assets/cr/pbGradient.png)
 
 _Les repères du gradiant sont trop en dehors de la page pour réussir à appliquer le même avec un copié collé_
 
@@ -79,7 +79,7 @@ Pour que au final, je me rappel de "La courbe doit se dessiner progressivement a
 
 3. Ensuite dans `function.php` on va ajouter 
 
-```markdown
+
 ```php
 function register_our_latest_impact_block() {
     if (function_exists('acf_register_block_type')) {
@@ -99,7 +99,6 @@ function register_our_latest_impact_block() {
         ]);
     }
 }
-```
 ```
 
 4. On a ensuite créé nos pages de rendu :
