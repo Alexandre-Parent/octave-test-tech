@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Exemple classe custom */
 .btn-cta {
   @apply inline-flex items-center gap-2 px-6 py-2 rounded-full bg-pure-white text-vibrant-blue text-sm font-medium hover:bg-gray-100 transition;
 }
@@ -96,7 +95,6 @@
   @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
 }
 
-/* Classes pour le décalage alterné */
 .card-decaled {
   @apply transform translate-y-0 mb-0 desktop:translate-y-10 desktop:mb-10;
 }
@@ -127,7 +125,6 @@
   @apply relative w-full h-[250px] md:h-[314px] overflow-hidden flex-shrink-0;
 }
 
-/* Ratio d'aspect en mobile, tablette et laptop */
 @media (max-width: 1315px) {
   .card-image {
     @apply aspect-[4/3] h-auto;
@@ -182,7 +179,6 @@
   @apply w-full relative h-[314px] md:h-[314px] laptop:h-[314px] desktop:w-1/2 desktop:h-auto;
 }
 
-/* Ratio d'aspect en mobile, tablette et laptop pour la grande carte */
 @media (max-width: 1315px) {
   .card-large-image {
     @apply aspect-[4/3] h-auto;
@@ -244,7 +240,6 @@
   @apply absolute inset-0 z-20;
 }
 
-/* Carte de taille double (2 cartes classiques) */
 .card-double {
   @apply relative bg-pure-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl flex flex-col w-full md:w-[calc(50%-20px)] laptop:flex-row laptop:w-[calc(50%-20px)] desktop:flex-row desktop:w-[864px];
   flex-direction: column;
@@ -266,7 +261,6 @@
   @apply w-full relative flex-shrink-0 h-[314px] md:h-[314px] laptop:h-[314px] desktop:w-[412px] desktop:h-auto;
 }
 
-/* Ratio d'aspect en mobile, tablette et laptop pour la carte double */
 @media (max-width: 1315px) {
   .card-double-image {
     @apply aspect-[4/3] h-auto;
@@ -285,7 +279,6 @@
   @apply text-[22px] font-normal mb-10 leading-[30px] tracking-[-0.05em] md:text-[26px] laptop:text-[26px] desktop:text-[26px];
 }
 
-/* Animations des étincelles améliorées */
 @keyframes sparkle {
   0% {
     opacity: 0.2;
