@@ -115,7 +115,7 @@ function register_our_latest_impact_block() {
         acf_register_block_type([
             'name' => 'our-latest-impact',
             'title' => __('Our Latest Impact'),
-            'render_callback' => 'render_our_latest_impact_block', // ← Votre fonction
+            'render_callback' => 'render_our_latest_impact_block',
             'category' => 'custom-blocks',
             'icon' => 'grid-view'
         ]);
@@ -123,11 +123,13 @@ function register_our_latest_impact_block() {
 }
 ```
 _Version PHP pure_
+```php
 require_once get_template_directory() . '/assets/cr/single-classique.php';
-
-_Version Timber + Twig_  
+```
+_Version Timber + Twig_ 
+```php
 require_once get_template_directory() . '/assets/cr/block-our-latest-impact.php';
-
+```
 
 ### **Avantages d’utiliser ACF Blocks**
 
