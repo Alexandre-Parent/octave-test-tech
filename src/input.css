@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 
 .hero-section {
   @apply relative pt-20 pb-10 md:pt-[115px] md:pb-[85px];
@@ -42,7 +57,6 @@
 .btn-cta {
   @apply inline-flex items-center gap-2 px-4 py-[10px] rounded-full bg-pure-white text-vibrant-blue justify-center text-base font-medium leading-[20px];
 }
-
 
 .card-decaled {
   @apply transform translate-y-0 mb-0 desktop:translate-y-10 desktop:mb-10;
@@ -146,8 +160,6 @@
   }
 }
 
-
-
 .card-large-content {
   @apply px-6 py-6 pb-[27px] md:px-6 md:py-6 laptop:px-6 laptop:py-6 laptop:flex laptop:flex-col laptop:justify-center desktop:w-1/2 desktop:px-16 desktop:py-[102px] desktop:flex desktop:flex-col desktop:justify-center;
 }
@@ -163,7 +175,6 @@
 .card-category-blue {
   @apply text-vibrant-blue;
 }
-
 
 .card-large-title {
   @apply text-[22px] font-normal max-md:mb-[24px] mb-10 leading-[30px] tracking-[-0.05em] md:text-[26px] laptop:text-[26px] desktop:text-h2-large;
@@ -228,8 +239,6 @@
     @apply w-full h-full object-cover;
   }
 }
-
-
 
 .card-double-content {
   @apply px-6 py-6 pb-[27px] md:px-6 md:py-6 laptop:px-6 laptop:py-6 laptop:flex laptop:flex-col laptop:justify-center laptop:flex-1 desktop:px-[40px] desktop:py-[162px] desktop:flex desktop:flex-col desktop:justify-center desktop:flex-1;

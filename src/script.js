@@ -3,15 +3,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const MIN_HEIGHT = 540;
   const DECALAGE_HEIGHT = 580;
-  const DESKTOP_BREAKPOINT = 1316;
+  const DESKTOP_BREAKPOINT = 1316; 
 
   function resetCardStyles() {
-    const allCards = document.querySelectorAll(".card, .card-double");
+    const allCards = document.querySelectorAll(".card, .card-double, .card-large");
     allCards.forEach((card) => {
       card.style.minHeight = "";
       card.style.height = "";
       card.style.transform = "";
     });
+    console.log('Styles des cartes réinitialisés');
   }
 
   function getCardHeight(card) {
@@ -69,14 +70,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function alignCardHeights() {
-    if (window.innerWidth <= DESKTOP_BREAKPOINT) return;
+    console.log('alignCardHeights appelé, largeur:', window.innerWidth);
+    if (window.innerWidth <= DESKTOP_BREAKPOINT) {
+      console.log('Largeur trop petite, nettoyage des styles et abandon');
+      resetCardStyles();
+      return;
+    }
 
     const container = document.querySelector(".cards-container");
     if (!container) return;
 
     resetCardStyles();
     requestAnimationFrame(() => {
-      // Réappliquer les transformations pour les cartes décalées
       const decaledCards = document.querySelectorAll(".card-decaled");
       decaledCards.forEach((card) => {
         card.style.transform = "translateY(40px)";
@@ -99,8 +104,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let resizeTimeout;
   window.addEventListener("resize", function () {
+    console.log('Resize détecté, redimensionnement en cours...');
     clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(alignCardHeights, 250);
+    resizeTimeout = setTimeout(() => {
+      console.log('Exécution de alignCardHeights après resize');
+      alignCardHeights();
+    }, 250);
   });
 });
 
