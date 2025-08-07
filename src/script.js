@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
       card.style.height = "";
       card.style.transform = "";
     });
-    console.log('Styles des cartes réinitialisés');
   }
 
   function getCardHeight(card) {
@@ -70,9 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function alignCardHeights() {
-    console.log('alignCardHeights appelé, largeur:', window.innerWidth);
     if (window.innerWidth <= DESKTOP_BREAKPOINT) {
-      console.log('Largeur trop petite, nettoyage des styles et abandon');
       resetCardStyles();
       return;
     }
@@ -104,10 +101,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let resizeTimeout;
   window.addEventListener("resize", function () {
-    console.log('Resize détecté, redimensionnement en cours...');
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
-      console.log('Exécution de alignCardHeights après resize');
       alignCardHeights();
     }, 250);
   });
