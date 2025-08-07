@@ -127,6 +127,13 @@
   @apply relative w-full h-[250px] md:h-[314px] overflow-hidden flex-shrink-0;
 }
 
+/* Ratio d'aspect en mobile, tablette et laptop */
+@media (max-width: 1315px) {
+  .card-image {
+    @apply aspect-[4/3] h-auto;
+  }
+}
+
 .card-image img {
   @apply w-full h-full object-cover;
 }
@@ -173,6 +180,13 @@
 
 .card-large-image {
   @apply w-full relative h-[314px] md:h-[314px] laptop:h-[314px] desktop:w-1/2 desktop:h-auto;
+}
+
+/* Ratio d'aspect en mobile, tablette et laptop pour la grande carte */
+@media (max-width: 1315px) {
+  .card-large-image {
+    @apply aspect-[4/3] h-auto;
+  }
 }
 
 .card-large-bg {
@@ -250,6 +264,13 @@
 
 .card-double-image {
   @apply w-full relative flex-shrink-0 h-[314px] md:h-[314px] laptop:h-[314px] desktop:w-[412px] desktop:h-auto;
+}
+
+/* Ratio d'aspect en mobile, tablette et laptop pour la carte double */
+@media (max-width: 1315px) {
+  .card-double-image {
+    @apply aspect-[4/3] h-auto;
+  }
 }
 
 .card-double-bg {
