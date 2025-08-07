@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Exemple classe custom */
 .btn-cta {
   @apply inline-flex items-center gap-2 px-6 py-2 rounded-full bg-pure-white text-vibrant-blue text-sm font-medium hover:bg-gray-100 transition;
 }
@@ -96,7 +95,6 @@
   @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
 }
 
-/* Classes pour le décalage alterné */
 .card-decaled {
   @apply transform translate-y-0 mb-0 desktop:translate-y-10 desktop:mb-10;
 }
@@ -124,15 +122,27 @@
 }
 
 .card-image {
-  @apply relative w-full h-[250px] md:h-[314px] overflow-hidden flex-shrink-0;
+  @apply relative w-full overflow-hidden flex-shrink-0;
 }
 
-.card-image img {
-  @apply w-full h-full object-cover;
+@media (max-width: 1315px) {
+  .card-image img,
+  .card-image picture {
+    @apply aspect-[67/50] w-full;
+  }
+}
+
+@media (min-width: 1316px) {
+  .card-image {
+    @apply h-[314px];
+  }
+  .card-image img {
+    @apply w-full h-full object-contain;
+  }
 }
 
 .card-badge {
-  @apply absolute top-6 left-6 px-3 py-1 rounded-full text-xs font-medium z-10;
+  @apply absolute top-6 left-6 px-3 py-1 rounded-full text-tag tracking-[0.05em] font-medium z-10;
 }
 
 .card-badge-white {
@@ -144,11 +154,11 @@
 }
 
 .card-content {
-  @apply px-6 pt-6 pb-6 flex flex-col flex-grow;
+  @apply px-6 pt-6 pb-[30px] flex flex-col flex-grow;
 }
 
 .card-title {
-  @apply text-[22px] md:text-[26px] font-normal mb-10 leading-[30px] tracking-[-0.05em] flex-shrink-0;
+  @apply text-[22px] md:text-[26px] font-normal max-tablet:mb-[24px] mb-8 desktop:mb-[34px] leading-[30px] tracking-[-0.05em] flex-shrink-0;
 }
 
 .card-description {
@@ -172,15 +182,29 @@
 }
 
 .card-large-image {
-  @apply w-full relative h-[314px] md:h-[314px] laptop:h-[314px] desktop:w-1/2 desktop:h-auto;
+  @apply w-full relative overflow-hidden desktop:w-1/2;
 }
 
-.card-large-bg {
-  @apply absolute inset-0 bg-cover bg-center bg-no-repeat;
+@media (max-width: 1315px) {
+  .card-large-image img,
+  .card-large-image picture {
+    @apply aspect-[67/50] w-full;
+  }
 }
+
+@media (min-width: 1316px) {
+  .card-large-image {
+    @apply h-full;
+  }
+  .card-large-image img {
+    @apply w-full h-full object-cover;
+  }
+}
+
+
 
 .card-large-content {
-  @apply px-6 py-6 md:px-6 md:py-6 laptop:px-6 laptop:py-6 laptop:flex laptop:flex-col laptop:justify-center desktop:w-1/2 desktop:px-16 desktop:py-[102px] desktop:flex desktop:flex-col desktop:justify-center;
+  @apply px-6 py-6 pb-[27px] md:px-6 md:py-6 laptop:px-6 laptop:py-6 laptop:flex laptop:flex-col laptop:justify-center desktop:w-1/2 desktop:px-16 desktop:py-[102px] desktop:flex desktop:flex-col desktop:justify-center;
 }
 
 .card-category {
@@ -204,7 +228,7 @@
 }
 
 .card-large-title {
-  @apply text-[22px] font-normal mb-10 leading-[30px] tracking-[-0.05em] md:text-[26px] laptop:text-[26px] desktop:text-h2-large;
+  @apply text-[22px] font-normal max-md:mb-[24px] mb-10 leading-[30px] tracking-[-0.05em] md:text-[26px] laptop:text-[26px] desktop:text-h2-large;
 }
 
 .card-link-white {
@@ -230,7 +254,6 @@
   @apply absolute inset-0 z-20;
 }
 
-/* Carte de taille double (2 cartes classiques) */
 .card-double {
   @apply relative bg-pure-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl flex flex-col w-full md:w-[calc(50%-20px)] laptop:flex-row laptop:w-[calc(50%-20px)] desktop:flex-row desktop:w-[864px];
   flex-direction: column;
@@ -249,52 +272,73 @@
 }
 
 .card-double-image {
-  @apply w-full relative flex-shrink-0 h-[314px] md:h-[314px] laptop:h-[314px] desktop:w-[412px] desktop:h-auto;
+  @apply w-full relative flex-shrink-0 overflow-hidden desktop:w-[412px];
 }
 
-.card-double-bg {
-  @apply absolute inset-0 bg-cover bg-center bg-no-repeat;
+@media (max-width: 1315px) {
+  .card-double-image img,
+  .card-double-image picture {
+    @apply aspect-[67/50] w-full;
+  }
 }
+
+@media (min-width: 1316px) {
+  .card-double-image {
+    @apply h-full;
+  }
+  .card-double-image img {
+    @apply w-full h-full object-cover;
+  }
+}
+
+
 
 .card-double-content {
-  @apply px-6 py-6 md:px-6 md:py-6 laptop:px-6 laptop:py-6 laptop:flex laptop:flex-col laptop:justify-center laptop:flex-1 desktop:px-[40px] desktop:py-[162px] desktop:flex desktop:flex-col desktop:justify-center desktop:flex-1;
+  @apply px-6 py-6 pb-[27px] md:px-6 md:py-6 laptop:px-6 laptop:py-6 laptop:flex laptop:flex-col laptop:justify-center laptop:flex-1 desktop:px-[40px] desktop:py-[162px] desktop:flex desktop:flex-col desktop:justify-center desktop:flex-1;
 }
 
 .card-double-title {
-  @apply text-[22px] font-normal mb-10 leading-[30px] tracking-[-0.05em] md:text-[26px] laptop:text-[26px] desktop:text-[26px];
+  @apply text-[22px] font-normal max-md:mb-[24px] mb-10 leading-[30px] tracking-[-0.05em] md:text-[26px] laptop:text-[26px] desktop:text-[26px];
 }
 
-/* Animations des étincelles améliorées */
 @keyframes sparkle {
   0% {
     opacity: 0.2;
+    transform: translateX(0);
   }
   50% {
     opacity: 1;
+    transform: translateX(10px);
   }
   100% {
     opacity: 0.2;
+    transform: translateX(20px);
   }
 }
 
 @keyframes sparkle-pulse {
   0% {
     opacity: 0.1;
+    transform: translateX(0);
   }
   50% {
     opacity: 0.9;
+    transform: translateX(8px);
   }
   100% {
     opacity: 0.1;
+    transform: translateX(15px);
   }
 }
 
 @keyframes sparkle-rotate {
   0% {
     opacity: 0.5;
+    transform: translateX(0);
   }
   100% {
     opacity: 1;
+    transform: translateX(12px);
   }
 }
 
@@ -304,4 +348,13 @@
   animation-duration: 2s;
   animation-iteration-count: infinite;
   pointer-events: none;
+}
+
+/* Désactiver les sparkles en mobile */
+@media (max-width: 767px) {
+  .sparkle,
+  .sparkle-line,
+  .sparkle-star {
+    display: none !important;
+  }
 }
