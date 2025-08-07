@@ -55,9 +55,12 @@ html {
 }
 
 .btn-cta {
-  @apply inline-flex items-center gap-3 pl-[21px] pr-4 py-[10px] rounded-full bg-pure-white text-vibrant-blue justify-center text-base font-medium leading-[20px];
+  @apply inline-flex items-center gap-[13px] pl-[21px] pr-4 py-[10px] rounded-full bg-pure-white text-vibrant-blue justify-center text-base font-medium leading-[20px];
 }
-
+.btn-cta img {
+  width: 14.14px;
+  height: 14.14px;
+}
 .card-decaled {
   @apply transform translate-y-0 mb-0 desktop:translate-y-10 desktop:mb-10;
 }
