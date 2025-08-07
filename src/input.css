@@ -51,7 +51,7 @@ html {
 }
 
 .hero-cta-group {
-  @apply flex flex-col sm:flex-row gap-8 items-start mt-6 tablet:mt-8 desktop:mt-0 tablet:flex-none desktop:flex-shrink-0;
+  @apply flex flex-col sm:flex-row gap-6 tablet:gap-8 items-start mt-6 tablet:mt-8 desktop:mt-0 tablet:flex-none desktop:flex-shrink-0;
 }
 
 .btn-cta {
