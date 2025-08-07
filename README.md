@@ -12,16 +12,9 @@
 | 6. Animation SVG | 1h 00 | **2h30** | 
 | 7. Théorie ACF + Gutenberg | 30min | **2h00** | (Avec le travail en plus)
 | 8. Bonus JS (this) | 30 min | **30min** |
-| 9. Finitions + tests | 1h 00 | **___h30** |
+| 9. Finitions + tests | 1h 00 | **45min** |
 | 10. README + compte-rendu | 1h 00 | **1h30** |
 
-### 📊 **Bilan Global**
-```
-🎯 Temps total estimé    : 11h 00
-⏰ Temps total réel      : ___ h ___
-📈 Écart total           : ___
-📊 Taux de respect       : ___%
-```
 
 ### 💬 **Analyse Détaillée des Écarts**
 
@@ -51,9 +44,13 @@ _Temps plus long car j'ai rédiger les fichier php et twig comme demandé_
 
 **8. Bonus JS (this) (+-0)**
 
-**9. Finitions + tests**
+**9. Finitions + tests** (+15min d'avance) :
 
 **10. README + compte-rendu (+30min)**
+
+Au final j'aurais respecté l'estimation de base en ne prenant pas en compte la charge de travail supplémentaire ajoutée après.
+J'aurais même pu être en avance si je n'avais pas voulu essayer d'améliorer l'animation pour pas grand-chose.
+
 
 ### 🎯 **Alternatives Explorées**
 
