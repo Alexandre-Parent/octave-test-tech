@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const MIN_HEIGHT = 540;
   const DECALAGE_HEIGHT = 580;
-  const REDUCTION_AMOUNT = 40;
   const DESKTOP_BREAKPOINT = 1316;
 
   function resetCardStyles() {
@@ -16,14 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function getCardHeight(card) {
-    // Sauvegarder la transformation actuelle
     const originalTransform = card.style.transform;
 
-    // Supprimer temporairement la transformation pour mesurer la vraie hauteur
     card.style.transform = "none";
     const height = card.offsetHeight;
 
-    // Restaurer la transformation
     card.style.transform = originalTransform;
 
     return height;
@@ -73,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function alignCardHeights() {
-    // Ne s'exécute que sur les écrans plus larges que desktop
     if (window.innerWidth <= DESKTOP_BREAKPOINT) return;
 
     const container = document.querySelector(".cards-container");
@@ -129,7 +124,6 @@ const animateSvgFade = () => {
       svg.classList.contains("block") && svg.classList.contains("md:hidden")
   );
 
-  // Si aucun SVG mobile n'est trouvé, essayer une approche alternative
   let mobileSvgFinal = mobileSvg;
   if (!mobileSvg) {
     mobileSvgFinal = Array.from(allSvgs).find(
@@ -145,14 +139,12 @@ const animateSvgFade = () => {
     const svgWidth = svgRect.width;
     const svgHeight = svgRect.height;
     
-    // Pour le SVG mobile, ajuster le calcul car il a une largeur différente du viewBox
-    let fadeStartX;
+    let revealWidth;
     if (svg.classList.contains("md:hidden")) {
-      // Le SVG mobile a un viewBox de 375 mais une largeur affichée de 585
       const scaleFactor = svgWidth / 375;
-      fadeStartX = 375 * (1 - fadePosition) * scaleFactor;
+      revealWidth = 375 * fadePosition * scaleFactor;
     } else {
-      fadeStartX = svgWidth * (1 - fadePosition);
+      revealWidth = svgWidth * fadePosition;
     }
 
     let mask = svg.querySelector("mask");
@@ -173,7 +165,7 @@ const animateSvgFade = () => {
 
     maskRect.setAttribute("x", "0");
     maskRect.setAttribute("y", "0");
-    maskRect.setAttribute("width", fadeStartX);
+    maskRect.setAttribute("width", revealWidth);
     maskRect.setAttribute("height", svgHeight);
     maskRect.setAttribute("fill", "white");
 
@@ -186,17 +178,15 @@ const animateSvgFade = () => {
     const svgWidth = svgRect.width;
     const svgHeight = svgRect.height;
     
-    // Pour le SVG mobile, ajuster le calcul car il a une largeur différente du viewBox
-    let fadeStartX;
+    let borderX;
     if (svg.classList.contains("md:hidden")) {
-      // Le SVG mobile a un viewBox de 375 mais une largeur affichée de 585
       const scaleFactor = svgWidth / 375;
-      fadeStartX = 375 * (1 - fadePosition) * scaleFactor;
+      borderX = 375 * fadePosition * scaleFactor;
     } else {
-      fadeStartX = svgWidth * (1 - fadePosition);
+      borderX = svgWidth * fadePosition;
     }
     
-    const borderWidth = Math.max(5, Math.min(20, (1 - fadePosition) * 40));
+    const borderWidth = Math.max(5, Math.min(20, fadePosition * 40));
 
 
 
@@ -223,8 +213,7 @@ const animateSvgFade = () => {
       borderMask.appendChild(borderMaskRect);
     }
 
-    // Toujours afficher le border, même à la fin
-    borderMaskRect.setAttribute("x", fadeStartX - borderWidth);
+    borderMaskRect.setAttribute("x", borderX - borderWidth);
     borderMaskRect.setAttribute("y", "0");
     borderMaskRect.setAttribute("width", borderWidth);
     borderMaskRect.setAttribute("height", svgHeight);
@@ -249,15 +238,14 @@ const animateSvgFade = () => {
       svg.appendChild(borderPath);
     }
 
-    // Afficher les étincelles seulement si le border est assez large
     if (borderWidth > 5) {
-      createSparkles(svg, fadeStartX, svgHeight, borderWidth);
+      createSparkles(svg, borderX, svgHeight, borderWidth);
     } else {
       svg.querySelectorAll(".sparkle").forEach((s) => s.remove());
     }
   };
 
-  const createSparkles = (svg, fadeStartX, svgHeight, borderWidth) => {
+  const createSparkles = (svg, borderX, svgHeight, borderWidth) => {
     svg
       .querySelectorAll(".sparkle, .sparkle-line, .sparkle-star")
       .forEach((s) => s.remove());
@@ -296,7 +284,7 @@ const animateSvgFade = () => {
 
       const { x, y, opacity } = getRandomPathPoint(
         svg,
-        fadeStartX,
+        borderX,
         borderWidth
       );
       sparkle.setAttribute("cx", x);
@@ -316,13 +304,11 @@ const animateSvgFade = () => {
     }
   };
 
-  const getRandomPathPoint = (svg, fadeStartX, borderWidth) => {
+  const getRandomPathPoint = (svg, borderX, borderWidth) => {
     const svgRect = svg.getBoundingClientRect();
 
-    // Position X : toutes les étincelles partent de la mèche (droite) mais restent visibles
-    const x = fadeStartX - borderWidth;
+    const x = borderX - borderWidth/2;
 
-    // Position Y : zone centrale avec un peu de variation
     const centerY = svgRect.height / 2;
     const spreadY = svgRect.height * 0.1;
     const y = centerY + (Math.random() - 0.5) * spreadY * 2;
@@ -373,12 +359,11 @@ const animateSvgFade = () => {
 window.addEventListener("scroll", () => requestAnimationFrame(animateSvgFade));
 document.addEventListener("DOMContentLoaded", () => animateSvgFade());
 
-// Ajouter l'écouteur d'événement pour le scroll
+
 window.addEventListener("scroll", () => {
   requestAnimationFrame(animateSvgFade);
 });
 
-// Initialiser l'animation au chargement
 document.addEventListener("DOMContentLoaded", () => {
   animateSvgFade();
 });
