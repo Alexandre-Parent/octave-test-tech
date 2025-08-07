@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn-cta {
-  @apply inline-flex items-center gap-2 px-6 py-2 rounded-full bg-pure-white text-vibrant-blue text-sm font-medium hover:bg-gray-100 transition;
-}
 
 .hero-section {
   @apply relative pt-20 pb-10 md:pt-[115px] md:pb-[85px];
@@ -43,57 +40,9 @@
 }
 
 .btn-cta {
-  @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pure-white text-vibrant-blue hover:bg-gray-50 transition-all duration-200 justify-center text-base font-medium leading-[20px];
+  @apply inline-flex items-center gap-2 px-4 py-[10px] rounded-full bg-pure-white text-vibrant-blue justify-center text-base font-medium leading-[20px];
 }
 
-.cards-grid {
-  @apply grid gap-6 md:gap-8 lg:gap-10;
-}
-
-.cards-grid-1col {
-  @apply grid-cols-1;
-}
-
-.cards-grid-2col {
-  @apply grid-cols-1 md:grid-cols-2;
-}
-
-.cards-grid-3col {
-  @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
-}
-
-.cards-grid-linear {
-  @apply grid gap-6 md:gap-8 lg:gap-10;
-}
-
-.cards-grid-linear-1col {
-  @apply grid-cols-1;
-}
-
-.cards-grid-linear-2col {
-  @apply grid-cols-1 md:grid-cols-2;
-}
-
-.cards-grid-linear-3col {
-  @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
-}
-
-/* Variante Décalée (Alterné) */
-.cards-grid-decaled {
-  @apply grid gap-6 md:gap-8 lg:gap-10;
-}
-
-.cards-grid-decaled-1col {
-  @apply grid-cols-1;
-}
-
-.cards-grid-decaled-2col {
-  @apply grid-cols-1 md:grid-cols-2;
-}
-
-.cards-grid-decaled-3col {
-  @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
-}
 
 .card-decaled {
   @apply transform translate-y-0 mb-0 desktop:translate-y-10 desktop:mb-10;
@@ -161,10 +110,6 @@
   @apply text-[22px] md:text-[26px] font-normal max-tablet:mb-[24px] mb-8 desktop:mb-[34px] leading-[30px] tracking-[-0.05em] flex-shrink-0;
 }
 
-.card-description {
-  @apply text-sm leading-relaxed mb-4;
-}
-
 .card-link {
   @apply inline-flex items-center gap-1 text-tag font-medium underline;
 }
@@ -219,13 +164,6 @@
   @apply text-vibrant-blue;
 }
 
-.card-category-radial {
-  @apply text-energy-green;
-}
-
-.card-category-white {
-  @apply text-vibrant-blue;
-}
 
 .card-large-title {
   @apply text-[22px] font-normal max-md:mb-[24px] mb-10 leading-[30px] tracking-[-0.05em] md:text-[26px] laptop:text-[26px] desktop:text-h2-large;
@@ -350,7 +288,6 @@
   pointer-events: none;
 }
 
-/* Désactiver les sparkles en mobile */
 @media (max-width: 767px) {
   .sparkle,
   .sparkle-line,
