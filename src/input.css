@@ -122,21 +122,27 @@
 }
 
 .card-image {
-  @apply relative w-full h-[250px] md:h-[314px] overflow-hidden flex-shrink-0;
+  @apply relative w-full overflow-hidden flex-shrink-0;
 }
 
 @media (max-width: 1315px) {
-  .card-image {
-    @apply aspect-[4/3] h-auto;
+  .card-image img,
+  .card-image picture {
+    @apply aspect-[67/50] w-full;
   }
 }
 
-.card-image img {
-  @apply w-full h-full object-cover;
+@media (min-width: 1316px) {
+  .card-image {
+    @apply h-[314px];
+  }
+  .card-image img {
+    @apply w-full h-full object-contain;
+  }
 }
 
 .card-badge {
-  @apply absolute top-6 left-6 px-3 py-1 rounded-full text-xs font-medium z-10;
+  @apply absolute top-6 left-6 px-3 py-1 rounded-full text-tag tracking-[0.05em] font-medium z-10;
 }
 
 .card-badge-white {
@@ -148,11 +154,11 @@
 }
 
 .card-content {
-  @apply px-6 pt-6 pb-6 flex flex-col flex-grow;
+  @apply px-6 pt-6 pb-[30px] flex flex-col flex-grow;
 }
 
 .card-title {
-  @apply text-[22px] md:text-[26px] font-normal mb-10 leading-[30px] tracking-[-0.05em] flex-shrink-0;
+  @apply text-[22px] md:text-[26px] font-normal max-tablet:mb-[24px] mb-8 desktop:mb-[34px] leading-[30px] tracking-[-0.05em] flex-shrink-0;
 }
 
 .card-description {
@@ -176,21 +182,29 @@
 }
 
 .card-large-image {
-  @apply w-full relative h-[314px] md:h-[314px] laptop:h-[314px] desktop:w-1/2 desktop:h-auto;
+  @apply w-full relative overflow-hidden desktop:w-1/2;
 }
 
 @media (max-width: 1315px) {
-  .card-large-image {
-    @apply aspect-[4/3] h-auto;
+  .card-large-image img,
+  .card-large-image picture {
+    @apply aspect-[67/50] w-full;
   }
 }
 
-.card-large-bg {
-  @apply absolute inset-0 bg-cover bg-center bg-no-repeat;
+@media (min-width: 1316px) {
+  .card-large-image {
+    @apply h-full;
+  }
+  .card-large-image img {
+    @apply w-full h-full object-cover;
+  }
 }
 
+
+
 .card-large-content {
-  @apply px-6 py-6 md:px-6 md:py-6 laptop:px-6 laptop:py-6 laptop:flex laptop:flex-col laptop:justify-center desktop:w-1/2 desktop:px-16 desktop:py-[102px] desktop:flex desktop:flex-col desktop:justify-center;
+  @apply px-6 py-6 pb-[27px] md:px-6 md:py-6 laptop:px-6 laptop:py-6 laptop:flex laptop:flex-col laptop:justify-center desktop:w-1/2 desktop:px-16 desktop:py-[102px] desktop:flex desktop:flex-col desktop:justify-center;
 }
 
 .card-category {
@@ -214,7 +228,7 @@
 }
 
 .card-large-title {
-  @apply text-[22px] font-normal mb-10 leading-[30px] tracking-[-0.05em] md:text-[26px] laptop:text-[26px] desktop:text-h2-large;
+  @apply text-[22px] font-normal max-md:mb-[24px] mb-10 leading-[30px] tracking-[-0.05em] md:text-[26px] laptop:text-[26px] desktop:text-h2-large;
 }
 
 .card-link-white {
@@ -258,25 +272,33 @@
 }
 
 .card-double-image {
-  @apply w-full relative flex-shrink-0 h-[314px] md:h-[314px] laptop:h-[314px] desktop:w-[412px] desktop:h-auto;
+  @apply w-full relative flex-shrink-0 overflow-hidden desktop:w-[412px];
 }
 
 @media (max-width: 1315px) {
-  .card-double-image {
-    @apply aspect-[4/3] h-auto;
+  .card-double-image img,
+  .card-double-image picture {
+    @apply aspect-[67/50] w-full;
   }
 }
 
-.card-double-bg {
-  @apply absolute inset-0 bg-cover bg-center bg-no-repeat;
+@media (min-width: 1316px) {
+  .card-double-image {
+    @apply h-full;
+  }
+  .card-double-image img {
+    @apply w-full h-full object-cover;
+  }
 }
 
+
+
 .card-double-content {
-  @apply px-6 py-6 md:px-6 md:py-6 laptop:px-6 laptop:py-6 laptop:flex laptop:flex-col laptop:justify-center laptop:flex-1 desktop:px-[40px] desktop:py-[162px] desktop:flex desktop:flex-col desktop:justify-center desktop:flex-1;
+  @apply px-6 py-6 pb-[27px] md:px-6 md:py-6 laptop:px-6 laptop:py-6 laptop:flex laptop:flex-col laptop:justify-center laptop:flex-1 desktop:px-[40px] desktop:py-[162px] desktop:flex desktop:flex-col desktop:justify-center desktop:flex-1;
 }
 
 .card-double-title {
-  @apply text-[22px] font-normal mb-10 leading-[30px] tracking-[-0.05em] md:text-[26px] laptop:text-[26px] desktop:text-[26px];
+  @apply text-[22px] font-normal max-md:mb-[24px] mb-10 leading-[30px] tracking-[-0.05em] md:text-[26px] laptop:text-[26px] desktop:text-[26px];
 }
 
 @keyframes sparkle {
@@ -318,4 +340,13 @@
   animation-duration: 2s;
   animation-iteration-count: infinite;
   pointer-events: none;
+}
+
+/* Désactiver les sparkles en mobile */
+@media (max-width: 767px) {
+  .sparkle,
+  .sparkle-line,
+  .sparkle-star {
+    display: none !important;
+  }
 }
