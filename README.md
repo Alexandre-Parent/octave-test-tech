@@ -79,7 +79,9 @@ Pour que au final, je me rappel de "La courbe doit se dessiner progressivement a
 
 3. Ensuite dans `function.php` on va ajouter 
 
-```function register_our_latest_impact_block() {
+```markdown
+```php
+function register_our_latest_impact_block() {
     if (function_exists('acf_register_block_type')) {
         acf_register_block_type([
             'name' => 'our-latest-impact',
@@ -96,7 +98,9 @@ Pour que au final, je me rappel de "La courbe doit se dessiner progressivement a
             ]
         ]);
     }
-}```
+}
+```
+```
 
 4. On a ensuite créé nos pages de rendu :
    - `single-classique.php` : Version PHP pure 
@@ -104,7 +108,8 @@ Pour que au final, je me rappel de "La courbe doit se dessiner progressivement a
 
 5. On ajoute l'enregistrement du bloc dans `function.php`
 
-```add_action('acf/init', 'register_our_latest_impact_block');
+```php
+add_action('acf/init', 'register_our_latest_impact_block');
 
 function register_our_latest_impact_block() {
     if (function_exists('acf_register_block_type')) {
@@ -116,8 +121,8 @@ function register_our_latest_impact_block() {
             'icon' => 'grid-view'
         ]);
     }
-}```
-
+}
+```
 _Version PHP pure_
 require_once get_template_directory() . '/assets/cr/single-classique.php';
 
@@ -162,7 +167,8 @@ Il pointe dynamiquement vers un objet qu'il possède ou appelle une fonction au 
 
 -**Dans un objet**
 
-```const personne = {
+```javascript
+const personne = {
     nom: "Alexandre",
     saluer() {
         console.log(`Bonjour, je suis ${this.nom}`);
@@ -170,21 +176,25 @@ Il pointe dynamiquement vers un objet qu'il possède ou appelle une fonction au 
     }
 };
 
-personne.saluer(); // "Bonjour, je suis Alexandre"```
+personne.saluer(); // "Bonjour, je suis Alexandre"
+```
 
 -**Fonction autonome**
 
-```function direBonjour() {
+```javascript
+function direBonjour() {
     console.log(this);
 }
 
-direBonjour();```
+direBonjour();
+```
 
 _Cela va nous renvoyer toutes les propriétés globales : document, location, navigator, etc._
 
 -**Perte du contexte**
 
-```const personne = {
+```javascript
+const personne = {
     nom: "Alexandre",
     saluer() {
         console.log(`Bonjour, je suis ${this.nom}`);
@@ -193,13 +203,15 @@ _Cela va nous renvoyer toutes les propriétés globales : document, location, na
 
 const salutation = personne.saluer;
 salutation(); 
-// "Bonjour, je suis undefined"```
+// "Bonjour, je suis undefined"
+```
 
 _`this` ne fait plus référence à `personne` !_
 
 -**Dans une fonction fléchée c'est encore différent**
 
-```const personne = {
+```javascript
+const personne = {
     nom: "Alexandre",
     saluer() {
         // Fonction normale : `this` = personne
@@ -214,15 +226,18 @@ _`this` ne fait plus référence à `personne` !_
     }
 };
 
-personne.saluer();```
+personne.saluer();
+```
 
 _Les arrow functions "capturent" le `this` de leur contexte de définition et ne le changent jamais, tandis que les fonctions normales ont un `this` qui dépend de comment elles sont appelées._
 
 -**Dans une classe**
 
-```class Animal {
+
+```javascript
+class Animal {
     constructor(nom) {
-        this.nom = nom;  _`this` fait référence à l'instance créée_
+        this.nom = nom;  // `this` fait référence à l'instance créée
     }
     
     parler() {
@@ -233,12 +248,15 @@ _Les arrow functions "capturent" le `this` de leur contexte de définition et ne
 const chien = new Animal("Francis");
 chien.parler();
 
-// "Francis fait du bruit"```
+// "Francis fait du bruit"
+```
 
 _Donc chaque instance possède son propre `this`_
 
-```const chien = new Animal("Francis");
+```javascript
+const chien = new Animal("Francis");
 const chat = new Animal("Minou");
 
 chien.parler(); // "Francis fait du bruit" -> this = chien
-chat.parler(); // "Minou fait du bruit" -> this = chat```
+chat.parler(); // "Minou fait du bruit" -> this = chat
+```
