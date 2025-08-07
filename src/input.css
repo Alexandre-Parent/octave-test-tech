@@ -51,7 +51,7 @@ html {
 }
 
 .hero-cta-group {
-  @apply flex flex-col sm:flex-row gap-6 items-start mt-6 tablet:mt-8 desktop:mt-0 tablet:flex-none desktop:flex-shrink-0;
+  @apply flex flex-col sm:flex-row gap-8 items-start mt-6 tablet:mt-8 desktop:mt-0 tablet:flex-none desktop:flex-shrink-0;
 }
 
 .btn-cta {
@@ -128,7 +128,7 @@ html {
 }
 
 .card-link {
-  @apply inline-flex items-center gap-1 text-tag font-medium underline;
+  @apply inline-flex items-center gap-1 text-tag font-medium  w-fit;
 }
 
 .card-bg-radial {
@@ -192,7 +192,13 @@ html {
 }
 
 .card-link-underline {
-  @apply underline decoration-energy-green decoration-[3px] underline-offset-[8px] mt-auto;
+  @apply relative mt-auto;
+}
+
+.card-link-underline::after {
+  content: '';
+  @apply absolute left-0 bottom-0 w-full h-[3px] bg-energy-green rounded-full;
+  transform: translateY(4px); /* correspond à underline-offset-[8px] / 2 */
 }
 
 .card-double .card-link-underline {
