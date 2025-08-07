@@ -147,17 +147,17 @@ En résumé, ACF Blocks offre une solution rapide, flexible et propre pour dynam
 
 -**Timber + Twig**
 
-Avantages : Séparation logique/présentation, templates plus lisibles, système de cache Twig
+Avantages : Séparation logique/présentation, templates plus lisibles, système de cache Twig  
 Inconvénients : Dépendance externe,
 
 -**Gutenberg Blocks Natifs (React/VueJS)**
 
-Avantages : Performance maximale
+Avantages : Performance maximale  
 Inconvénients : Courbe d'apprentissage React, développement plus long, complexité pour les champs dynamiques
 
 -**Page Builders (Elementor Pro/Divi/Oxygen Oxygen/...)**
 
-Avantages : Interface drag & drop, widgets prêts à l'emploi
+Avantages : Interface drag & drop, widgets prêts à l'emploi  
 Inconvénients : Vendor lock-in, performance dégradée, code généré souvent lourd, payant avec abonnement
 
 
