@@ -1,5 +1,24 @@
 # TEST TECHNIQUE OCTAVE
 
+## Technologies Utilisées
+
+- **HTML5**  
+- **CSS3**  
+- **JavaScript (ES6+)**  
+- **Tailwind CSS 3.4.0**  
+
+## Installation et Démarrage
+
+Pas nécéssaire si vous ne modifiez pas le css
+
+```bash
+# Installer les dépendances
+npm install
+
+# Lancer le build Tailwind en mode watch
+npm run build
+```
+
 ### 📋 Temps par Tâche
 
 | Tâche | Estimé | Réel |
