@@ -2,10 +2,10 @@
 
 ## Technologies Utilisées
 
-- **HTML5** -
-- **CSS3** -
-- **JavaScript (ES6+)** -
-- **Tailwind CSS 3.4.0** -
+- **HTML5**  
+- **CSS3**  
+- **JavaScript (ES6+)**  
+- **Tailwind CSS 3.4.0**  
 
 ## Installation et Démarrage
 
